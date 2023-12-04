@@ -1,0 +1,664 @@
+/*==============================================================*/
+/* DBMS name:      Microsoft SQL Server 2008                    */
+/* Created on:     26/11/2023 7:14:12 CH                        */
+/*==============================================================*/
+
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CO') and o.name = 'FK_CO_CO_VIEN_CHU')
+alter table CO
+   drop constraint FK_CO_CO_VIEN_CHU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CO') and o.name = 'FK_CO_CO2_PHIEU_DA')
+alter table CO
+   drop constraint FK_CO_CO2_PHIEU_DA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CO') and o.name = 'FK_CO_CO3_TIEU_CHI')
+alter table CO
+   drop constraint FK_CO_CO3_TIEU_CHI
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('DAM_NHAN') and o.name = 'FK_DAM_NHAN_DAM_NHAN_VIEN_CHU')
+alter table DAM_NHAN
+   drop constraint FK_DAM_NHAN_DAM_NHAN_VIEN_CHU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('DAM_NHAN') and o.name = 'FK_DAM_NHAN_DAM_NHAN2_NHIEM_VU')
+alter table DAM_NHAN
+   drop constraint FK_DAM_NHAN_DAM_NHAN2_NHIEM_VU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('GIU') and o.name = 'FK_GIU_GIU_VIEN_CHU')
+alter table GIU
+   drop constraint FK_GIU_GIU_VIEN_CHU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('GIU') and o.name = 'FK_GIU_GIU2_CHUC_VU')
+alter table GIU
+   drop constraint FK_GIU_GIU2_CHUC_VU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('THUOC') and o.name = 'FK_THUOC_THUOC_DON_VI_C')
+alter table THUOC
+   drop constraint FK_THUOC_THUOC_DON_VI_C
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('THUOC') and o.name = 'FK_THUOC_THUOC2_VIEN_CHU')
+alter table THUOC
+   drop constraint FK_THUOC_THUOC2_VIEN_CHU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('TIEU_CHI_DANH_GIA') and o.name = 'FK_TIEU_CHI_BAO_GOM_LOAI_TIE')
+alter table TIEU_CHI_DANH_GIA
+   drop constraint FK_TIEU_CHI_BAO_GOM_LOAI_TIE
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('XET_DUYET') and o.name = 'FK_XET_DUYE_XET_DUYET_VIEN_CHU')
+alter table XET_DUYET
+   drop constraint FK_XET_DUYE_XET_DUYET_VIEN_CHU
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('XET_DUYET') and o.name = 'FK_XET_DUYE_XET_DUYET_CAP_DANH')
+alter table XET_DUYET
+   drop constraint FK_XET_DUYE_XET_DUYET_CAP_DANH
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('XET_DUYET') and o.name = 'FK_XET_DUYE_XET_DUYET_XEP_LOAI')
+alter table XET_DUYET
+   drop constraint FK_XET_DUYE_XET_DUYET_XEP_LOAI
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CAP_DANH_GIA')
+            and   type = 'U')
+   drop table CAP_DANH_GIA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CHUC_VU')
+            and   type = 'U')
+   drop table CHUC_VU
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('CO')
+            and   name  = 'CO3_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index CO.CO3_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('CO')
+            and   name  = 'CO2_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index CO.CO2_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('CO')
+            and   name  = 'CO_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index CO.CO_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CO')
+            and   type = 'U')
+   drop table CO
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('DAM_NHAN')
+            and   name  = 'DAM_NHAN2_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index DAM_NHAN.DAM_NHAN2_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('DAM_NHAN')
+            and   name  = 'DAM_NHAN_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index DAM_NHAN.DAM_NHAN_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('DAM_NHAN')
+            and   type = 'U')
+   drop table DAM_NHAN
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('DON_VI_CONG_TAC')
+            and   type = 'U')
+   drop table DON_VI_CONG_TAC
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('GIU')
+            and   name  = 'GIU2_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index GIU.GIU2_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('GIU')
+            and   name  = 'GIU_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index GIU.GIU_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('GIU')
+            and   type = 'U')
+   drop table GIU
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('LOAI_TIEU_CHI')
+            and   type = 'U')
+   drop table LOAI_TIEU_CHI
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('NHIEM_VU')
+            and   type = 'U')
+   drop table NHIEM_VU
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('PHIEU_DANH_GIA')
+            and   type = 'U')
+   drop table PHIEU_DANH_GIA
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('THUOC')
+            and   name  = 'THUOC2_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index THUOC.THUOC2_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('THUOC')
+            and   name  = 'THUOC_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index THUOC.THUOC_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('THUOC')
+            and   type = 'U')
+   drop table THUOC
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('TIEU_CHI_DANH_GIA')
+            and   name  = 'BAO_GOM_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index TIEU_CHI_DANH_GIA.BAO_GOM_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('TIEU_CHI_DANH_GIA')
+            and   type = 'U')
+   drop table TIEU_CHI_DANH_GIA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('VIEN_CHUC')
+            and   type = 'U')
+   drop table VIEN_CHUC
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('XEP_LOAI')
+            and   type = 'U')
+   drop table XEP_LOAI
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('XET_DUYET')
+            and   name  = 'XET_DUYET3_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index XET_DUYET.XET_DUYET3_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('XET_DUYET')
+            and   name  = 'XET_DUYET2_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index XET_DUYET.XET_DUYET2_FK
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('XET_DUYET')
+            and   name  = 'XET_DUYET_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index XET_DUYET.XET_DUYET_FK
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('XET_DUYET')
+            and   type = 'U')
+   drop table XET_DUYET
+go
+
+/*==============================================================*/
+/* Table: CAP_DANH_GIA                                          */
+/*==============================================================*/
+create table CAP_DANH_GIA (
+   MA_CDG               varchar(5)           not null,
+   TEN_CDG              varchar(50)          null,
+   constraint PK_CAP_DANH_GIA primary key nonclustered (MA_CDG)
+)
+go
+/*== Doi kieu du lieu thuoc tinh TEN_CDG cua TABLE: CAP_DANH_GIA */
+alter table CAP_DANH_GIA alter column TEN_CDG nvarchar(50) null
+
+/*==============================================================*/
+/* Table: CHUC_VU                                               */
+/*==============================================================*/
+create table CHUC_VU (
+   MA_CV                varchar(5)           not null,
+   TEN_CV               varchar(50)          null,
+   constraint PK_CHUC_VU primary key nonclustered (MA_CV)
+)
+go
+/*== Doi kieu du lieu thuoc tinh TEN_CV cua TABLE: CHUC_VU */
+alter table CHUC_VU alter column TEN_CV nvarchar(50) null
+
+
+/*==============================================================*/
+/* Table: CO                                                    */
+/*==============================================================*/
+create table CO (
+   MA_VC                varchar(5)           not null,
+   MA_PDG               varchar(5)           not null,
+   MA_TC                varchar(5)           not null,
+   constraint PK_CO primary key (MA_VC, MA_PDG, MA_TC)
+)
+go
+
+/*==============================================================*/
+/* Index: CO_FK                                                 */
+/*==============================================================*/
+create index CO_FK on CO (
+MA_VC ASC
+)
+go
+
+/*==============================================================*/
+/* Index: CO2_FK                                                */
+/*==============================================================*/
+create index CO2_FK on CO (
+MA_PDG ASC
+)
+go
+
+/*==============================================================*/
+/* Index: CO3_FK                                                */
+/*==============================================================*/
+create index CO3_FK on CO (
+MA_TC ASC
+)
+go
+
+/*==============================================================*/
+/* Table: DAM_NHAN                                              */
+/*==============================================================*/
+create table DAM_NHAN (
+   MA_VC                varchar(5)           not null,
+   MA_NV                varchar(5)           not null,
+   constraint PK_DAM_NHAN primary key (MA_VC, MA_NV)
+)
+go
+
+/*==============================================================*/
+/* Index: DAM_NHAN_FK                                           */
+/*==============================================================*/
+create index DAM_NHAN_FK on DAM_NHAN (
+MA_VC ASC
+)
+go
+
+/*==============================================================*/
+/* Index: DAM_NHAN2_FK                                          */
+/*==============================================================*/
+create index DAM_NHAN2_FK on DAM_NHAN (
+MA_NV ASC
+)
+go
+
+/*==============================================================*/
+/* Table: DON_VI_CONG_TAC                                       */
+/*==============================================================*/
+create table DON_VI_CONG_TAC (
+   MA_DV                varchar(5)           not null,
+   TEN_DV               varchar(50)          null,
+   constraint PK_DON_VI_CONG_TAC primary key nonclustered (MA_DV)
+)
+go
+
+/*== Doi kieu du lieu thuoc tinh TEN_DV cua TABLE: DON_VI_CONG_TAC*/
+alter table DON_VI_CONG_TAC alter column TEN_DV nvarchar(50) null
+
+/*==============================================================*/
+/* Table: GIU                                                   */
+/*==============================================================*/
+create table GIU (
+   MA_VC                varchar(5)           not null,
+   MA_CV                varchar(5)           not null,
+   THOIGIAN_BATDAU      datetime             null,
+   THOIGIAN_KETTHUC     datetime             null,
+   constraint PK_GIU primary key (MA_VC, MA_CV)
+)
+go
+
+alter table GIU alter column THOIGIAN_BATDAU date null
+alter table GIU alter column THOIGIAN_KETTHUC date null
+
+/*==============================================================*/
+/* Index: GIU_FK                                                */
+/*==============================================================*/
+create index GIU_FK on GIU (
+MA_VC ASC
+)
+go
+
+/*==============================================================*/
+/* Index: GIU2_FK                                               */
+/*==============================================================*/
+create index GIU2_FK on GIU (
+MA_CV ASC
+)
+go
+
+/*==============================================================*/
+/* Table: LOAI_TIEU_CHI                                         */
+/*==============================================================*/
+create table LOAI_TIEU_CHI (
+   MA_LOAI_TC           varchar(5)           not null,
+   TEN_LOAI_TC          varchar(50)          null,
+   constraint PK_LOAI_TIEU_CHI primary key nonclustered (MA_LOAI_TC)
+)
+go
+/*== Doi kieu du lieu cua thuoc tinh TEN_LOAI_TC cua TABLE: LOAI_TIEU_CHI*/
+alter table LOAI_TIEU_CHI alter column TEN_LOAI_TC nvarchar(100) null
+
+/*==============================================================*/
+/* Table: NHIEM_VU                                              */
+/*==============================================================*/
+create table NHIEM_VU (
+   MA_NV                varchar(5)           not null,
+   TEN_NV               varchar(50)          null,
+   constraint PK_NHIEM_VU primary key nonclustered (MA_NV)
+)
+go
+
+/*== Doi kieu du lieu cua thuoc tinh TEN_NV cua TABLE: NHIEM_VU*/
+alter table NHIEM_VU alter column TEN_NV nvarchar(50) null
+
+/*==============================================================*/
+/* Table: PHIEU_DANH_GIA                                        */
+/*==============================================================*/
+create table PHIEU_DANH_GIA (
+   MA_PDG               varchar(5)           not null,
+   constraint PK_PHIEU_DANH_GIA primary key nonclustered (MA_PDG)
+)
+go
+
+
+/*==============================================================*/
+/* Table: THUOC                                                 */
+/*==============================================================*/
+create table THUOC (
+   MA_DV                varchar(5)           not null,
+   MA_VC                varchar(5)           not null,
+   THOIGIAN_BATDAU      datetime             null,
+   THOIGIAN_KETTHUC     datetime             null,
+   constraint PK_THUOC primary key (MA_DV, MA_VC)
+)
+go
+
+alter table THUOC alter column THOIGIAN_BATDAU date null
+alter table THUOC alter column THOIGIAN_KETTHUC date null
+
+/*==============================================================*/
+/* Index: THUOC_FK                                              */
+/*==============================================================*/
+create index THUOC_FK on THUOC (
+MA_DV ASC
+)
+go
+
+/*==============================================================*/
+/* Index: THUOC2_FK                                             */
+/*==============================================================*/
+create index THUOC2_FK on THUOC (
+MA_VC ASC
+)
+go
+
+/*==============================================================*/
+/* Table: TIEU_CHI_DANH_GIA                                     */
+/*==============================================================*/
+create table TIEU_CHI_DANH_GIA (
+   MA_TC                varchar(5)           not null,
+   MA_LOAI_TC           varchar(5)           not null,
+   TEN_TC               varchar(50)          null,
+   DIEM_TC              numeric(10)          null,
+   constraint PK_TIEU_CHI_DANH_GIA primary key nonclustered (MA_TC)
+)
+go
+
+/*== Doi kieu du lieu cua thuoc tinh TEN_TC cua TABLE: TIEU_CHI_DANH_GIA*/
+alter table TIEU_CHI_DANH_GIA alter column TEN_TC nvarchar(50) null
+
+/*==============================================================*/
+/* Index: BAO_GOM_FK                                            */
+/*==============================================================*/
+create index BAO_GOM_FK on TIEU_CHI_DANH_GIA (
+MA_LOAI_TC ASC
+)
+go
+
+/*==============================================================*/
+/* Table: VIEN_CHUC                                             */
+/*==============================================================*/
+create table VIEN_CHUC (
+   MA_VC                varchar(5)           not null,
+   TEN_VC               varchar(50)          null,
+   GIOI_TINH            varchar(3)           null,
+   NGAY_SINH            date                 null,
+   DIA_CHI              text                 null,
+   SO_DIEN_THOAI        numeric(20)          null,
+   constraint PK_VIEN_CHUC primary key nonclustered (MA_VC)
+)
+go
+
+/*== Doi kieu du lieu cua thuoc tinh TEN_VC, GIOI_TINH cua TABLE: VIEN_CHUC*/
+alter table VIEN_CHUC alter column TEN_VC nvarchar(50) null
+alter table VIEN_CHUC alter column GIOI_TINH nvarchar(50) null
+
+/*==============================================================*/
+/* Table: XEP_LOAI                                              */
+/*==============================================================*/
+create table XEP_LOAI (
+   MA_XL                varchar(5)           not null,
+   TEN_XL               varchar(50)          null,
+   constraint PK_XEP_LOAI primary key nonclustered (MA_XL)
+)
+go
+
+/*== Doi kieu du lieu cua thuoc tinh TEN_XL cua TABLE: XEP_LOAI*/
+alter table XEP_LOAI alter column TEN_XL nvarchar(50) null
+
+/*==============================================================*/
+/* Table: XET_DUYET                                             */
+/*==============================================================*/
+create table XET_DUYET (
+   MA_VC                varchar(5)           not null,
+   MA_CDG               varchar(5)           not null,
+   MA_XL                varchar(5)           not null,
+   NGAY_DANH_GIA        datetime             null,
+   constraint PK_XET_DUYET primary key (MA_VC, MA_CDG, MA_XL)
+)
+go
+
+alter table XET_DUYET alter column NGAY_DANH_GIA date null
+
+/*==============================================================*/
+/* Index: XET_DUYET_FK                                          */
+/*==============================================================*/
+create index XET_DUYET_FK on XET_DUYET (
+MA_VC ASC
+)
+go
+
+/*==============================================================*/
+/* Index: XET_DUYET2_FK                                         */
+/*==============================================================*/
+create index XET_DUYET2_FK on XET_DUYET (
+MA_CDG ASC
+)
+go
+
+/*==============================================================*/
+/* Index: XET_DUYET3_FK                                         */
+/*==============================================================*/
+create index XET_DUYET3_FK on XET_DUYET (
+MA_XL ASC
+)
+go
+
+alter table CO
+   add constraint FK_CO_CO_VIEN_CHU foreign key (MA_VC)
+      references VIEN_CHUC (MA_VC)
+go
+
+alter table CO
+   add constraint FK_CO_CO2_PHIEU_DA foreign key (MA_PDG)
+      references PHIEU_DANH_GIA (MA_PDG)
+go
+
+alter table CO
+   add constraint FK_CO_CO3_TIEU_CHI foreign key (MA_TC)
+      references TIEU_CHI_DANH_GIA (MA_TC)
+go
+
+alter table DAM_NHAN
+   add constraint FK_DAM_NHAN_DAM_NHAN_VIEN_CHU foreign key (MA_VC)
+      references VIEN_CHUC (MA_VC)
+go
+
+alter table DAM_NHAN
+   add constraint FK_DAM_NHAN_DAM_NHAN2_NHIEM_VU foreign key (MA_NV)
+      references NHIEM_VU (MA_NV)
+go
+
+alter table GIU
+   add constraint FK_GIU_GIU_VIEN_CHU foreign key (MA_VC)
+      references VIEN_CHUC (MA_VC)
+go
+
+alter table GIU
+   add constraint FK_GIU_GIU2_CHUC_VU foreign key (MA_CV)
+      references CHUC_VU (MA_CV)
+go
+
+alter table THUOC
+   add constraint FK_THUOC_THUOC_DON_VI_C foreign key (MA_DV)
+      references DON_VI_CONG_TAC (MA_DV)
+go
+
+alter table THUOC
+   add constraint FK_THUOC_THUOC2_VIEN_CHU foreign key (MA_VC)
+      references VIEN_CHUC (MA_VC)
+go
+
+alter table TIEU_CHI_DANH_GIA
+   add constraint FK_TIEU_CHI_BAO_GOM_LOAI_TIE foreign key (MA_LOAI_TC)
+      references LOAI_TIEU_CHI (MA_LOAI_TC)
+go
+
+alter table XET_DUYET
+   add constraint FK_XET_DUYE_XET_DUYET_VIEN_CHU foreign key (MA_VC)
+      references VIEN_CHUC (MA_VC)
+go
+
+alter table XET_DUYET
+   add constraint FK_XET_DUYE_XET_DUYET_CAP_DANH foreign key (MA_CDG)
+      references CAP_DANH_GIA (MA_CDG)
+go
+
+alter table XET_DUYET
+   add constraint FK_XET_DUYE_XET_DUYET_XEP_LOAI foreign key (MA_XL)
+      references XEP_LOAI (MA_XL)
+go
