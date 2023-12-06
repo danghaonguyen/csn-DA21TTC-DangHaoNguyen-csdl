@@ -546,6 +546,7 @@ go
 /*== Doi kieu du lieu cua thuoc tinh TEN_VC, GIOI_TINH cua TABLE: VIEN_CHUC*/
 alter table VIEN_CHUC alter column TEN_VC nvarchar(50) null
 alter table VIEN_CHUC alter column GIOI_TINH nvarchar(50) null
+alter table VIEN_CHUC alter column SO_DIEN_THOAI varchar(20) null
 
 /*==============================================================*/
 /* Table: XEP_LOAI                                              */
