@@ -1,0 +1,34 @@
+*== INSERT DU LIEU MAU THU == */
+
+/* 1.Nhập dữ liệu vào bảng CAP DANH GIA */
+insert into CAP_DANH_GIA
+values ('C1',N'Cấp Trường')
+
+insert into CAP_DANH_GIA
+values ('C2',N'Cấp Khoa và Phòng')
+
+insert into CAP_DANH_GIA
+values ('C3',N'Cấp Bộ môn')
+
+select *
+from CAP_DANH_GIA
+
+
+/* 2.Nhập dữ liệu vào bảng DON_VI_CONG_TAC */
+insert into DON_VI_CONG_TAC
+values ('DV01',N'Phòng Công nghệ thông tin')
+
+insert into DON_VI_CONG_TAC
+values ('DV02',N'Phòng Công tác sinh viên')
+
+insert into DON_VI_CONG_TAC
+values ('DV03',N'Khoa Kỹ Thuật và Công Nghệ')
+
+insert into DON_VI_CONG_TAC
+values ('DV04',N'Phòng Khoa học Công Nghệ')
+
+insert into DON_VI_CONG_TAC
+values ('DV05',N'Khoa Lý luận Chịnh trị')
+
+select *
+from DON_VI_CONG_TAC
