@@ -1,0 +1,45 @@
+/* 3.Nhập dữ liệu vào bảng CHUC_VU */
+insert into CHUC_VU
+values ('CV01',N'Trưởng Khoa')
+
+insert into CHUC_VU
+values ('CV02',N'Phó trưởng Khoa')
+
+insert into CHUC_VU
+values ('CV03',N'Trưởng Bộ môn')
+
+insert into CHUC_VU
+values ('CV04',N'Phó trưởng Bộ môn')
+
+insert into CHUC_VU
+values ('CV05',N'Trưởng phòng')
+
+insert into CHUC_VU
+values ('CV06',N'Phó trưởng phòng')
+
+insert into CHUC_VU
+values ('CV07',N'Giảng viên')
+
+insert into CHUC_VU
+values ('CV08', N'Viên chức hành chính')
+
+select *
+from CHUC_VU
+
+
+
+/* 4.Nhập dữ liệu vào bảng XEP_LOAI */
+insert into XEP_LOAI
+values ('XL01',N'Hoàn thành Xuất sắc Nhiệm vụ')
+
+insert into XEP_LOAI
+values ('XL02',N'Hoàn thành Tốt Nhiệm vụ')
+
+insert into XEP_LOAI
+values ('XL03',N'Hoàn thành Nhiệm vụ')
+
+insert into XEP_LOAI
+values ('XL04',N'Không hoàn thành Nhiệm vụ')
+
+select *
+from XEP_LOAI
