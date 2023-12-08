@@ -1,0 +1,51 @@
+/* 5.Nhập dữ liệu vào bảng LOAI_TIEU_CHI */
+insert into LOAI_TIEU_CHI
+values ('L01',N'Hoạt động Giảng dạy')
+
+insert into LOAI_TIEU_CHI
+values ('L01.1',N'Đạt 100% giờ chuẩn được được 135 điểm. Cứ	mỗi giờ vượt chuẩn được tính 0,5 điểm')
+
+insert into LOAI_TIEU_CHI
+values('L01.2',N'Khảo sát sự hài lòng của sinh viên điểm TB chung từ 4,2 trở lên')
+
+insert into LOAI_TIEU_CHI
+values('L01.3',N'Khảo sát sự hài lòng của sinh viên điểm TB chung từ 3,4 đến dưới 4,2 điểm')
+
+insert into LOAI_TIEU_CHI
+values('L01.4',N'Khảo sát sự hài lòng của sinh viên điểm TB chung từ 2,6 đến dưới 3,4 điểm')
+
+insert into LOAI_TIEU_CHI
+values ('L02',N'Nghiên cứu Khoa học')
+
+insert into LOAI_TIEU_CHI
+values ('L03',N'Phục vụ Cộng đồng')
+
+select *
+from LOAI_TIEU_CHI
+
+
+
+/* 6.Nhập dữ liệu vào bảng TIEU_CHI_DANH_GIA */
+insert into TIEU_CHI_DANH_GIA
+values ('TC01','L01',N'Nhiệm vụ công việc được giao cho cá nhân','210')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC1.1','L01.1',N'Nhiệm vụ công việc được giao cho cá nhân','200')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC1.2','L01.2',N'Nhiệm vụ công việc được giao cho cá nhân','10')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC1.3','L01.3',N'Nhiệm vụ công việc được giao cho cá nhân','8')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC1.4','L01.4',N'Nhiệm vụ công việc được giao cho cá nhân','6')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC02','L02',N'Nhiệm vụ công việc được giao cho cá nhân','190')
+
+insert into TIEU_CHI_DANH_GIA
+values ('TC03','L03',N'Nhiệm vụ công việc được giao cho cá nhân','100')
+
+select *
+from TIEU_CHI_DANH_GIA
