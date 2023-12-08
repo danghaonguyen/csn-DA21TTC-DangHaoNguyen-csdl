@@ -3,7 +3,7 @@ insert into LOAI_TIEU_CHI
 values ('L01',N'Hoạt động Giảng dạy')
 
 insert into LOAI_TIEU_CHI
-values ('L01.1',N'Đạt 100% giờ chuẩn được được 135 điểm. Cứ	mỗi giờ vượt chuẩn được tính 0,5 điểm')
+values ('L01.1',N'Đạt 100% giờ chuẩn được được 135 điểm. Cứ mỗi giờ vượt chuẩn được tính 0,5 điểm')
 
 insert into LOAI_TIEU_CHI
 values('L01.2',N'Khảo sát sự hài lòng của sinh viên điểm TB chung từ 4,2 trở lên')
