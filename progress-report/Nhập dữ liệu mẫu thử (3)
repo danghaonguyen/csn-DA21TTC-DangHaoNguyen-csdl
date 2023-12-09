@@ -1,0 +1,89 @@
+/* 7.Nhập dữ liệu vào bảng NHIEM_VU */
+insert into NHIEM_VU
+values ('NV01',N'Giảng dạy')
+
+insert into NHIEM_VU
+values ('NV02',N'Nghiên cứu khoa học')
+
+insert into NHIEM_VU
+values ('NV03',N'Phục vụ Cộng Ðồng')
+
+insert into NHIEM_VU
+values ('NV04',N'Hoàn thành công việc được phân công')
+
+select *
+from NHIEM_VU
+
+
+/* 8.Nhập dữ liệu vào bảng VIEN_CHUC*/
+/*== DU LIEU PHONG CONG NGHE THONG TIN ==*/
+insert into VIEN_CHUC
+values ('VC01', N'Nghi Vĩnh Khanh', N'Nam', '1991-02-14', 'Trà Vinh', '02943855246281')
+
+insert into VIEN_CHUC
+values ('VC02', N'Lê Vãn Phol', N'Nam', '1991-10-02', 'Trà Vinh', '02943855246366')
+
+/*== DU LIEU KHOA KY THUAT & CONG NGHE THONG TIN ==*/
+insert into VIEN_CHUC
+values ('VC03', N'Nguyễn Nhứt Lam', N'Nam', '1995-01-20', 'Trà Vinh', '0919556441')
+
+insert into VIEN_CHUC
+values ('VC04', N'Nguyễn Bảo Ân', N'Nam', '1995-07-16', 'Trà Vinh', '0908961632')
+
+insert into VIEN_CHUC
+values ('VC05' , N'Phạm Thị Trúc Mai', N'Nữ', '1997-04-26', 'Trà Vinh', '0936010206')
+
+/*== DU LIEU PHONG CONG TAC SINH VIEN ==*/
+insert into VIEN_CHUC
+values ('VC06' , N'Bùi Thành Dự', N'Nam', '1992-08-12', 'Trà Vinh', '0386557799')
+
+insert into VIEN_CHUC
+values ('VC07' , N'Ðỗ Thị Hồng Phương', N'Nữ', '1992-06-06', 'Trà Vinh', '0918285853')
+
+/*== DU LIEU KHOA LY LUAN CHINH TRI ==*/
+insert into VIEN_CHUC
+values ('VC08' , N'Nguyễn Thị Ái Mỹ', N'Nữ', '1994-04-05', 'Trà Vinh', '0965261359')
+
+insert into VIEN_CHUC
+values ('VC09' , N'Nguyễn Thanh Thanh', N'Nữ','1994-09-26', 'Trà Vinh', '0344211383')
+
+/*== DU LIEU PHONG KHOA CONG NGHE ==*/
+insert into VIEN_CHUC
+values ('VC10' , N'Huỳnh Công Khôi', N'Nam', '1993-12-20', 'Trà Vinh', '02943855246356')
+
+select *
+from VIEN_CHUC
+
+/* 9. Nhập dữ liệu của bảng PHIEU_DANH_GIA */
+insert into PHIEU_DANH_GIA
+values ('PH01')
+
+insert into PHIEU_DANH_GIA
+values ('PH02')
+
+insert into PHIEU_DANH_GIA
+values ('PH03')
+
+insert into PHIEU_DANH_GIA
+values ('PH04')
+
+insert into PHIEU_DANH_GIA
+values ('PH05')
+
+insert into PHIEU_DANH_GIA
+values ('PH06')
+
+insert into PHIEU_DANH_GIA
+values ('PH07')
+
+insert into PHIEU_DANH_GIA
+values ('PH08')
+
+insert into PHIEU_DANH_GIA
+values ('PH09')
+
+insert into PHIEU_DANH_GIA
+values ('PH10')
+
+select *
+from PHIEU_DANH_GIA
