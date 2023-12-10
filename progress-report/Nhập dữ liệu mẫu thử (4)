@@ -1,0 +1,107 @@
+/* 10. Nhập dữ liệu của bảng LIEN KET: CO */
+
+insert into CO
+values ('VC01', 'PH01', 'TC02')
+
+insert into CO
+values ('VC02', 'PH02', 'TC02')
+
+
+insert into CO
+values ('VC03', 'PH03', 'TC01')
+
+insert into CO
+values ('VC03', 'PH03', 'TC1.1')
+
+insert into CO
+values ('VC03', 'PH03', 'TC1.2')
+
+insert into CO
+values ('VC03', 'PH03', 'TC02')
+
+insert into CO
+values ('VC03', 'PH03', 'TC03')
+
+
+
+insert into CO
+values ('VC04', 'PH04', 'TC01')
+
+insert into CO
+values ('VC04', 'PH04', 'TC1.1')
+
+insert into CO
+values ('VC04', 'PH04', 'TC1.2')
+
+insert into CO
+values ('VC04', 'PH04', 'TC02')
+
+insert into CO
+values ('VC04', 'PH04', 'TC03')
+
+
+
+insert into CO
+values ('VC05', 'PH05', 'TC01')
+
+insert into CO
+values ('VC05', 'PH05', 'TC1.1')
+
+insert into CO
+values ('VC05', 'PH05', 'TC1.3')
+
+insert into CO
+values ('VC05', 'PH05', 'TC02')
+
+insert into CO
+values ('VC05', 'PH05', 'TC03')
+
+
+
+insert into CO
+values ('VC06', 'PH06', 'TC03')
+
+insert into CO
+values ('VC07', 'PH07', 'TC03')
+
+
+
+insert into CO
+values ('VC08', 'PH08', 'TC01')
+
+insert into CO
+values ('VC08', 'PH08', 'TC1.3')
+
+insert into CO
+values ('VC08', 'PH08', 'TC1.4')
+
+insert into CO
+values ('VC08', 'PH08', 'TC02')
+
+insert into CO
+values ('VC08', 'PH08', 'TC03')
+
+
+
+insert into CO
+values ('VC09', 'PH09', 'TC01')
+
+insert into CO
+values ('VC09', 'PH09', 'TC1.3')
+
+insert into CO
+values ('VC09', 'PH09', 'TC1.4')
+
+insert into CO
+values ('VC09', 'PH09', 'TC02')
+
+insert into CO
+values ('VC09', 'PH09', 'TC03')
+
+
+
+insert into CO
+values ('VC10', 'PH10', 'TC02')
+
+select *
+from CO
