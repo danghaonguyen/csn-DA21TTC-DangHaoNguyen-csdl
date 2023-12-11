@@ -1,0 +1,80 @@
+/* 11. Nhập dữ liệu của bảng LIEN KET: DAM_NHAN */
+
+/*== Viên chức 01 là trưởng phòng nên chỉ hoàn thành công việc được phân công ==*/
+insert into DAM_NHAN
+values ('VC01', 'NV04')
+
+/*== Viên chức 02 là phó trưởng phòng nên chỉ hoàn thành công việc được phân công ==*/
+insert into DAM_NHAN
+values ('VC02', 'NV04')
+
+
+/*== Viên chức 03 là giảng viên nên có 3 nhiệm vụ chính : giảng dạy, nghiên cứu khoa học, phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC03', 'NV01')
+
+insert into DAM_NHAN
+values ('VC03', 'NV02')
+
+insert into DAM_NHAN
+values ('VC03', 'NV03')
+
+
+/*== Viên chức 04 là giảng viên nên có 3 nhiệm vụ chính : giảng dạy, nghiên cứu khoa học, phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC04', 'NV01')
+
+insert into DAM_NHAN
+values ('VC04', 'NV02')
+
+insert into DAM_NHAN
+values ('VC04', 'NV03')
+
+
+/*== Viên chức 05 là giảng viên nên có 3 nhiệm vụ chính: giảng dạy, nghiên cứu khoa học, phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC05', 'NV01')
+
+insert into DAM_NHAN
+values ('VC05', 'NV02')
+
+insert into DAM_NHAN
+values ('VC05', 'NV03')
+
+
+/*== Viên chức 06 là viên chức hành chính có nhiệm vụ phục vụ cồng động ==*/
+insert into DAM_NHAN
+values ('VC06', 'NV03')
+
+/*== Viên chức 07 là viên chức hành chính có nhiệm vụ phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC07', 'NV03')
+
+
+/*== Viên chức 08 LÀ giảng viên nên có 3 nhiệm vụ chính: giảng dạy, nghiên cứu khoa học, phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC08', 'NV01')
+
+insert into DAM_NHAN
+values ('VC08', 'NV02')
+
+insert into DAM_NHAN
+values ('VC08', 'NV03')
+
+
+/*== Viên chức 09 LÀ giảng viên nên có 3 nhiệm vụ chính: giảng dạy, nghiên cứu khoa học, phục vụ cộng đồng ==*/
+insert into DAM_NHAN
+values ('VC09', 'NV01')
+
+insert into DAM_NHAN
+values ('VC09', 'NV02')
+
+insert into DAM_NHAN
+values ('VC09', 'NV03')
+
+/*== Viên chức 10 là trưởng phòng nên chỉ hoàn thành công việc được phân công ==*/
+insert into DAM_NHAN
+values ('VC10', 'NV04')
+
+select *
+from DAM_NHAN
