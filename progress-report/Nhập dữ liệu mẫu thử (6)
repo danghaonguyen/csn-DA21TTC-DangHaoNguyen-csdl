@@ -1,0 +1,33 @@
+/* 12. Nhập dữ liệu của bảng LIEN KET: GIU */
+insert into GIU
+values ('VC01', 'CV05', '2013-04-15', '2040-04-15')
+
+insert into GIU
+values ('VC02', 'CV06', '2013-08-20', '2040-08-20')
+
+insert into GIU
+values ('VC03', 'CV03', '2014-01-15', '2040-04-15')
+
+insert into GIU
+values ('VC04', 'CV04', '2012-02-20', '2040-04-15')
+
+insert into GIU
+values ('VC05', 'CV07', '2013-06-24', '2040-04-15')
+
+insert into GIU
+values ('VC06', 'CV08', '2011-02-13', '2040-04-15')
+
+insert into GIU
+values ('VC07', 'CV08', '2012-04-15', '2040-04-15')
+
+insert into GIU
+values ('VC08', 'CV07', '2013-11-10', '2040-04-15')
+
+insert into GIU
+values ('VC09', 'CV07', '2013-12-20', '2040-04-15')
+
+insert into GIU
+values ('VC10', 'CV05', '2010-05-20', '2040-04-15')
+
+select *
+from GIU
