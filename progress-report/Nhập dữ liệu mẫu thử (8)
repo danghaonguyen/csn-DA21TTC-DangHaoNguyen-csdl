@@ -1,0 +1,89 @@
+/* 14. Nhập dữ liệu của bảng LIEN KET: XET_DUYET */
+insert into XET_DUYET
+values ('VC01', 'C1', 'XL01', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC01', 'C2', 'XL02', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC02', 'C1', 'XL01', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC02', 'C2', 'XL02', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC03', 'C1', 'XL01', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC03', 'C2', 'XL02', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC03', 'C3', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC04', 'C1', 'XL02', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC04', 'C2', 'XL03', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC04', 'C3', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC05', 'C1', 'XL02', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC05', 'C2', 'XL03', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC05', 'C3', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC06', 'C1', 'XL03', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC06', 'C2', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC07', 'C1', 'XL03', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC07', 'C2', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC08', 'C1', 'XL01', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC08', 'C2', 'XL02', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC08', 'C3', 'XL03', '2023-01-25')
+
+
+insert into XET_DUYET
+values ('VC09', 'C1', 'XL03', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC09', 'C2', 'XL04', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC09', 'C3', 'XL04', '2023-01-25')
+
+
+
+insert into XET_DUYET
+values ('VC10', 'C1', 'XL01', '2023-01-25')
+
+insert into XET_DUYET
+values ('VC10', 'C2', 'XL02', '2023-01-25')
+
+
+select *
+from XET_DUYET
