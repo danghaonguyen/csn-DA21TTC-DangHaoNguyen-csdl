@@ -1,0 +1,70 @@
+/*== TRUY VẤN HIỂN THỊ KẾT QUẢ ==*/
+
+/*== 1. Hiển thị danh sách viên chức giữ chức vụ ==*/
+select TEN_VC as Tên_Viên_chức, TEN_CV as Tên_Chức_vụ,THOIGIAN_BATDAU as Thời_gian_bắt_đầu, THOIGIAN_KETTHUC as Thời_gian_kết_thúc
+from VIEN_CHUC A , CHUC_VU B, GIU C
+where A.MA_VC = C.MA_VC
+and B.MA_CV = C.MA_CV
+order by TEN_VC
+
+/*== 2. Hiển thị danh sách viên chức thuộc đơn vị công tác ==*/
+select TEN_VC as Tên_Viên_chức, TEN_DV as Tên_Đơn_vị_công_tác, THOIGIAN_BATDAU as Thời_gian_bắt_đầu, THOIGIAN_KETTHUC as Thời_gian_kết_thúc
+from VIEN_CHUC A, DON_VI_CONG_TAC B, THUOC C
+where A.MA_VC = C.MA_VC
+and B.MA_DV = C.MA_DV
+order by TEN_VC
+
+/*== 3.Hiển thị danh sách viên chức đảm nhận nhiệm vụ ==*/
+select TEN_VC as Tên_Viên_chức, TEN_NV as Tên_Nhiệm_vụ
+from VIEN_CHUC A, NHIEM_VU B, DAM_NHAN C
+where A.MA_VC = C.MA_VC
+and B.MA_NV = C.MA_NV
+order by TEN_VC
+
+/*== 4.Hiển thị danh sách viên chức xét duyệt bởi cấp đánh giá và kết luận xếp loại ==*/
+select TEN_VC as Tên_viên_chức, TEN_CDG as Tên_cấp_đánh_giá, TEN_XL as Tên_xếp_loại, NGAY_DANH_GIA as Ngày_đánh_giá
+from VIEN_CHUC A, CAP_DANH_GIA B, XEP_LOAI C, XET_DUYET D
+where A.MA_VC = D.MA_VC
+and B.MA_CDG = D.MA_CDG
+and C.MA_XL = D.MA_XL
+and (D.MA_CDG = 'C1' OR D.MA_CDG = 'C2' OR D.MA_CDG = 'C3')
+order by TEN_VC, TEN_CDG
+
+/*== 5.Hiển thị danh sách thứ tự danh sách viên chức nhận phiếu đánh giá ==*/
+select MA_PDG as Mã_phiếu_đánh_giá, TEN_VC as Tên_viên_chức 
+from VIEN_CHUC A, CO B
+where A.MA_VC = B.MA_VC
+order by TEN_VC
+
+/*== 6.1. Hiển thị danh sách viên chức có phiếu đánh giá có tiêu chí đánh giá gồm các loại tiêu chí ==*/
+select MA_PDG as Mã_phiếu_đánh_giá, TEN_VC as Tên_viên_chức, TEN_TC as Tên_tiêu_chí_đánh_giá, TEN_LOAI_TC as Tên_loại_tiêu_chí, DIEM_TC as Điểm_tiêu_chí
+from VIEN_CHUC A, TIEU_CHI_DANH_GIA B, LOAI_TIEU_CHI C, CO D
+where A.MA_VC = D.MA_VC
+and B.MA_TC = D.MA_TC
+and B.MA_LOAI_TC = C.MA_LOAI_TC
+order by TEN_VC
+
+/*== 6.2. Tổng điểm tiêu chí của các viên chức ==*/
+select TEN_VC as Tên_viên_chức, SUM(DIEM_TC) as Tổng_điểm
+from VIEN_CHUC A, TIEU_CHI_DANH_GIA B, CO C
+where A.MA_VC = C.MA_VC
+and B.MA_TC = C.MA_TC
+group by TEN_VC
+
+/*== 7.Hiển thị danh sách viên chức thuộc đơn vị công tác và giữ chức vụ ==*/
+select TEN_VC as Tên_viên_chức, GIOI_TINH as Giới_tính, NGAY_SINH as Ngày_sinh, TEN_DV as Tên_đơn_vị_công_tác, TEN_CV as Tên_chức_vụ
+from VIEN_CHUC A, DON_VI_CONG_TAC B, CHUC_VU C, THUOC D, GIU E
+where A.MA_VC = D.MA_VC
+and A.MA_VC = E.MA_VC
+and B.MA_DV = D.MA_DV
+and C.MA_CV = E.MA_CV
+
+/*== 8.Hiển thị danh sách viên chức giữ chức vụ và đảm nhận nhiệm vụ ==*/
+select TEN_VC as Tên_viên_chức, TEN_CV as Tên_chức_vụ, TEN_NV as Tên_nhiệm_vụ
+from VIEN_CHUC A, CHUC_VU B, NHIEM_VU C, GIU D, DAM_NHAN E
+where A.MA_VC = D.MA_VC
+and A.MA_VC = E.MA_VC
+and B.MA_CV = D.MA_CV
+and C.MA_NV = E.MA_NV
+order by TEN_VC
+
