@@ -1,4 +1,4 @@
-# csn-DA21TTC-DangHaoNguyen-csdl
+# ĐỒ ÁN CƠ SỞ NGÀNH - XÂY DỰNG CƠ SỞ DỮ LIỆU VỀ ĐÁNH GIÁ, XẾP LOẠI VIÊN CHỨC TẠI TRƯỜNG ĐẠI HỌC TRÀ VINH
 Đặng Hào Nguyên - DA21TTC - 110121179
 - Đề tài đồ án: Xây dựng cơ sở dữ liệu đánh giá, xếp loại viên chức tại Trường Đại học Trà Vinh.
 
